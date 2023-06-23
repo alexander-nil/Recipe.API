@@ -1,11 +1,9 @@
 import { Request, Response } from "express";
 import { CreateCategory, GetCategories } from "../../schemas/category_schema";
 import { UploadImage, GetImages } from "../../schemas/image_schema";
-
+import { Buffer } from "buffer";
 import express from "express";
 const router = express.Router();
-
-const Buffer = require("buffer").Buffer;
 
 function base64ToBlob(base64String: string) {
   const buffer = Buffer.from(base64String, "base64");

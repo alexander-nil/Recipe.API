@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: false }));
 app.use(bodyParser.json());
 import mongoose from "mongoose";
 import { GetShoppingList, IShoppingList } from "./schemas/product_schema";
-
-require("dotenv").config();
+import env from "dotenv";
+env.config();
 
 const PORT = process.env.PORT;
 const CONNECTION_STRING = process.env.CONNECTION_STRING;

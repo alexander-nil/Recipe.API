@@ -1,8 +1,7 @@
 import { Request, Response } from "express";
 import { CreateCategory, GetCategories } from "../../schemas/category_schema";
-
-const express = require("express");
-const router = express.Router();
+import * as Express from "express";
+const router = Express.Router();
 
 router.get("/categories", async (req: Request, res: Response) => {
   const result = await GetCategories();

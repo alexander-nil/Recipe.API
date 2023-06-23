@@ -5,8 +5,7 @@ import {
   GetShoppingList,
   UpdateCheckedShoppingList,
 } from "../../schemas/product_schema";
-
-const express = require("express");
+import * as express from "express";
 const router = express.Router();
 
 router.post("/products/search", async (req: Request, res: Response) => {

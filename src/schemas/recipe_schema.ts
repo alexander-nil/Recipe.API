@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import { Blob } from "buffer";
 
 export const Recipe = mongoose.model(
   "recipes",

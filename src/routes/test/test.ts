@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-
-const express = require("express");
+import * as express from "express";
 const router = express.Router();
 
 router.get("/test", async (req: Request, res: Response) => {
