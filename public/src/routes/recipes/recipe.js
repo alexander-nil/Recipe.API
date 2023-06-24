@@ -38,7 +38,7 @@ const router = express.Router();
 const buffer_1 = require("buffer");
 function base64ToBlob(base64String) {
     const buffer = buffer_1.Buffer.from(base64String, "base64");
-    const blob = new buffer_1.Blob([buffer], { type: "application/octet-stream" });
+    const blob = new Blob([buffer], { type: "application/octet-stream" });
     return blob;
 }
 router.get("/recipes", (req, res) => __awaiter(void 0, void 0, void 0, function* () {

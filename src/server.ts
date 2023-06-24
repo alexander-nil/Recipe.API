@@ -8,9 +8,14 @@ import test from "./routes/test/test";
 import * as WebSocket from "ws";
 import cors from "cors";
 import * as http from "http";
+
+//@ts-ignore
+import { Blob } from "blob-polyfill";
+global["Blob"] = Blob;
 const app = express();
 
 app.use(cors());
+("");
 app.use(express.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: false }));
 

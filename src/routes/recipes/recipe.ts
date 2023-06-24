@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { CreateRecipe, GetRecipes, IRecipe } from "../../schemas/recipe_schema";
 import * as express from "express";
 const router = express.Router();
-import { Buffer, Blob } from "buffer";
+import { Buffer } from "buffer";
 
 function base64ToBlob(base64String: string) {
   const buffer = Buffer.from(base64String, "base64");

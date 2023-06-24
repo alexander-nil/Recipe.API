@@ -44,8 +44,12 @@ const shopping_1 = __importDefault(require("./routes/shopping/shopping"));
 const test_1 = __importDefault(require("./routes/test/test"));
 const WebSocket = __importStar(require("ws"));
 const cors_1 = __importDefault(require("cors"));
+//@ts-ignore
+const blob_polyfill_1 = require("blob-polyfill");
+global["Blob"] = blob_polyfill_1.Blob;
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
+("");
 app.use(express_1.default.json({ limit: "50mb" }));
 app.use(body_parser_1.default.urlencoded({ limit: "50mb", extended: false }));
 // parse application/json
