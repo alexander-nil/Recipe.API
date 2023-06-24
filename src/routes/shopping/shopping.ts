@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import {
   AddToList,
   GetShoppingList,
@@ -7,6 +7,12 @@ import {
 } from "../../schemas/product_schema";
 import * as express from "express";
 const router = express.Router();
+
+router.get("/*", (req: Request, res: Response, next: NextFunction) => {
+  const isAuthenticated = req.isAuthenticated();
+  if (!isAuthenticated) return res.redirect("/register");
+  next();
+});
 
 router.post("/products/search", async (req: Request, res: Response) => {
   const searchString = req.body.input;
